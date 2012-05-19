@@ -48,6 +48,7 @@ myKeys = [ ("M-p", shellPrompt defaultXPConfig)
          , ("M-S-v", selectWorkspace myXPConfig)
          , ("M-S-g", windowPromptGoto myXPConfig)
          , ("M-S-b", windowPromptBring myXPConfig)
+         , ("M-S-l", spawn "xscreensaver-command -lock")
          ]
 
 myLayoutHook = avoidStruts $ windowNavigation $ subTabbed $
