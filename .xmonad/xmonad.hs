@@ -35,12 +35,16 @@ myManageHook = composeAll
     ]
 
 myKeys = [ ("M-p", shellPrompt defaultXPConfig)
+           
+           -- sublayouts
          , ("M-C-h", sendMessage $ pullGroup L)
          , ("M-C-l", sendMessage $ pullGroup R)
          , ("M-C-k", sendMessage $ pullGroup U)
          , ("M-C-j", sendMessage $ pullGroup D)
          , ("M-C-m", withFocused (sendMessage . MergeAll))
          , ("M-C-u", withFocused (sendMessage . UnMerge))
+           
+           -- dynamic workspaces
          , ("M-S-<Backspace>", removeWorkspace)
          , ("M-S-r", renameWorkspace myXPConfig)
          , ("M-m", withWorkspace myXPConfig (windows . W.shift))
