@@ -18,4 +18,15 @@
 
 (global-set-key (kbd "<f5>") 'compile)
 
+;; org-mode configuration
+
 (setq org-log-done t)
+(setq org-todo-keywords 
+  '((sequence "TODO(t@)" "WAIT(w@/!)" "|" "DONE(d@)" "CANCELED(c@)")))
+
+(setq org-todo-keyword-faces '(("TODO" . (:foreground "yellow" :background "red" :bold t :weight bold))
+  ("WAIT" . (:foreground "red" :bold t :weight bold))
+  ("DONE" . (:foreground "green"))
+  ("CANCELED" . (:foreground "gray"))))
+
+(global-set-key "\C-ca" 'org-agenda)
