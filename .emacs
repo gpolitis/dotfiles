@@ -1,3 +1,7 @@
+(custom-set-variables
+ '(inhibit-startup-screen t))
+(custom-set-faces)
+
 (menu-bar-mode -1)
 (global-linum-mode)
 (setq linum-format " %d ")
@@ -30,3 +34,29 @@
   ("CANCELED" . (:foreground "gray"))))
 
 (global-set-key "\C-ca" 'org-agenda)
+
+(when
+    (load
+     (expand-file-name "~/.emacs.d/elpa/package.el") t)
+  (package-initialize)
+  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/")))
+
+(when
+    (load
+     (expand-file-name "~/.emacs.d/site-lisp/xcscope.el") t)
+  (require 'xcscope))
+
+(when
+    (load
+     (expand-file-name "~/.emacs.d/site-lisp/promela-mode.el") t)
+  (require 'promela-mode)
+  (setq auto-mode-alist
+	(append
+	 (list (cons "\\.pml$" 'promela-mode))
+	 auto-mode-alist)))
+
+(when
+    (load
+     (expand-file-name "~/.emacs.d/site-lisp/coq.el") t)
+  (require 'coq-mode)
+  (setq auto-mode-alist (cons '("\\.v$" . coq-mode) auto-mode-alist)))
