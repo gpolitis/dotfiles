@@ -1,5 +1,5 @@
-! transparency - true or false (default)
-!URxvt*transparent: true
+! transparency - true or false (default) 
+URxvt*transparent: false
 
 ! tint with any color; i.e., blue, red, tomato4, olivedrab2, etc.
 !   some nice listings are at:
@@ -37,8 +37,8 @@ URxvt*background: Black
 !URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=12:antialias=true:hinting=true
 !
 ! Xft: Inconsolata fonts
-URxvt*font: xft:inconsolata:pixelsize=18:antialias=true:hinting=true
-URxvt*boldfont: xft:inconsolata:bold:pixelsize=18:antialias=true:hinting=true
+URxvt*font: xft:inconsolata:pixelsize=14:antialias=true:hinting=true
+URxvt*boldFont: xft:inconsolata:bold:pixelsize=14:antialias=true:hinting=true
 !
 ! Xft: Liberation fonts
 !  Fedora/debian packages: liberation-mono-fonts/ttf-liberation
@@ -71,4 +71,5 @@ URxvt*scrollBar_right: false
 ! scrollbar style - rxvt (default), plain, next, or xterm
 URxvt*scrollstyle: rxvt
 
-URxvt*urgentOnBell: true
+urxvt.urgentOnBell: true
+! urxvt.visualBell: true
