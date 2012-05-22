@@ -60,3 +60,5 @@
      (expand-file-name "~/.emacs.d/site-lisp/coq.el") t)
   (require 'coq-mode)
   (setq auto-mode-alist (cons '("\\.v$" . coq-mode) auto-mode-alist)))
+
+(set-terminal-coding-system 'utf-8)
