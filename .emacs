@@ -61,4 +61,9 @@
   (require 'coq-mode)
   (setq auto-mode-alist (cons '("\\.v$" . coq-mode) auto-mode-alist)))
 
+(when
+    (load
+     (expand-file-name "~/.emacs.d/site-lisp/clojure-mode/clojure-mode.el") t)
+  (require 'clojure-mode))
+
 (set-terminal-coding-system 'utf-8)
