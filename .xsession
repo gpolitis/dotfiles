@@ -19,3 +19,8 @@ then
 else
   exec xmonad
 fi
+
+#xpmroot ~/Pictures/escher-big.xpm &
+# http://www.imagemagick.org/Usage/resize/#resize
+# convert escher-big.jpg -resize 1680x1050\> -size 1680x1050 xc:black +swap -gravity center -composite escher-big.xpm
+#exec xmonad
