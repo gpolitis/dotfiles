@@ -22,7 +22,7 @@ import XMonad.Hooks.SetWMName
 
 myConfig = azertyConfig { modMask = mod4Mask
                      , layoutHook = myLayoutHook
-                     , workspaces = [ "_|_", "2:email", "3:im" ]
+                     , workspaces = [ "_|_", "2:email" ]
                      , terminal = "urxvtc"
                      , startupHook = setWMName "LG3D"
                      } `additionalKeysP` myKeys
