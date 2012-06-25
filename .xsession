@@ -13,6 +13,13 @@ then
   /usr/bin/xscreensaver -no-splash &
 fi
 
+setxkbmap -layout "fr,gr" -option "grp:alt_shift_toggle"
+
+if [ -f /home/gp/bin/startup.sh ]
+then
+    /home/gp/bin/startup.sh
+fi
+
 if [ -f /home/gp/.cabal/bin/xmonad ]
 then
   exec /home/gp/.cabal/bin/xmonad
