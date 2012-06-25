@@ -22,17 +22,21 @@ import XMonad.Hooks.SetWMName
 
 myConfig = azertyConfig { modMask = mod4Mask
                      , layoutHook = myLayoutHook
-                     , workspaces = [ "_|_", "2:email", "3:im" ]
+                     , workspaces = [ "_|_", "2:email", "3:im", "4:web" ]
                      , terminal = "~/bin/x-terminal-emulator.sh"
                      , startupHook = setWMName "LG3D"
+		     , manageHook = myManageHook <+> manageHook azertyConfig
                      } `additionalKeysP` myKeys
 
 myXPConfig = defaultXPConfig
 
 myManageHook = composeAll
     [ className =? "emulator-arm" --> doFloat
+    , className =? "Sylpheed" --> doShift "2:email"
+    , className =? "Pidgin" --> doShift "3:im"
+    , className =? "Opera" --> doShiftAndGo "4:web"
     , manageDocks
-    ]
+    ] where doShiftAndGo ws = doF (W.greedyView ws) <+> doShift ws
 
 myKeys = [ ("M-p", shellPrompt defaultXPConfig)
            
