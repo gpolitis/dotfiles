@@ -1,16 +1,19 @@
 if [ -f /usr/bin/hsetroot ]
 then
-  /usr/bin/hsetroot -solid "#191970"
+    /usr/bin/hsetroot -solid "#191970"
 fi
 
 if [ -f /usr/bin/urxvtd ]
 then
-  /usr/bin/urxvtd -q -f -o
+    /usr/bin/urxvtd -q -f -o
+    ln -s /usr/bin/urxvtc ~/.xmonad/xmonad-terminal
+else
+    ln -s /usr/bin/xterm ~/.xmonad/xmonad-terminal
 fi
 
 if [ -f /usr/bin/xscreensaver ]
 then
-  /usr/bin/xscreensaver -no-splash &
+    /usr/bin/xscreensaver -no-splash &
 fi
 
 setxkbmap -layout "fr,gr" -option "grp:alt_shift_toggle"
@@ -20,11 +23,11 @@ then
     /home/gp/bin/startup.sh
 fi
 
-if [ -f /home/gp/.cabal/bin/xmonad ]
+if [ -f ~/.cabal/bin/xmonad ]
 then
-  exec /home/gp/.cabal/bin/xmonad
+    exec ~/.cabal/bin/xmonad
 else
-  exec xmonad
+    exec xmonad
 fi
 
 #xpmroot ~/Pictures/escher-big.xpm &
